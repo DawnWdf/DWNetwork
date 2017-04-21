@@ -15,6 +15,22 @@
 		CF05E2D81E9B830B00B42C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF05E2D61E9B830B00B42C1C /* LaunchScreen.storyboard */; };
 		CF05E2E31E9B830C00B42C1C /* DWNetworkDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05E2E21E9B830C00B42C1C /* DWNetworkDemoTests.m */; };
 		CF05E2EE1E9B830C00B42C1C /* DWNetworkDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05E2ED1E9B830C00B42C1C /* DWNetworkDemoUITests.m */; };
+		CF05E3091E9B840000B42C1C /* DWNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */; };
+		CF05E3101E9B840000B42C1C /* DWNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05E30F1E9B840000B42C1C /* DWNetworkTests.m */; };
+		CF05E3121E9B840000B42C1C /* DWNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = CF05E3021E9B83FF00B42C1C /* DWNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF05E3151E9B840000B42C1C /* DWNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */; };
+		CF05E3161E9B840000B42C1C /* DWNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF05E3201E9B841D00B42C1C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF05E31F1E9B841D00B42C1C /* AFNetworking.framework */; };
+		CF4E7EEE1EA5C78200652782 /* DWRequestTaskProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EED1EA5C78200652782 /* DWRequestTaskProtocol.h */; };
+		CF4E7EFA1EA70C8900652782 /* NSObject+DWRequestTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EF81EA70C8900652782 /* NSObject+DWRequestTask.h */; };
+		CF4E7EFB1EA70C8900652782 /* NSObject+DWRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7EF91EA70C8900652782 /* NSObject+DWRequestTask.m */; };
+		CF4E7EFE1EA70DBE00652782 /* DWRequestTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EFC1EA70DBE00652782 /* DWRequestTask.h */; };
+		CF4E7EFF1EA70DBE00652782 /* DWRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7EFD1EA70DBE00652782 /* DWRequestTask.m */; };
+		CF4E7F021EA745E700652782 /* MyTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7F011EA745E700652782 /* MyTask.m */; };
+		CF4E7F091EA7471D00652782 /* DWHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7F071EA7471D00652782 /* DWHTTPSessionManager.h */; };
+		CF4E7F0A1EA7471E00652782 /* DWHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7F081EA7471D00652782 /* DWHTTPSessionManager.m */; };
+		CF4E7F0D1EA858E400652782 /* DWHTTPRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7F0B1EA858E400652782 /* DWHTTPRequestSerializer.h */; };
+		CF4E7F0E1EA858E400652782 /* DWHTTPRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7F0C1EA858E400652782 /* DWHTTPRequestSerializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +48,42 @@
 			remoteGlobalIDString = CF05E2C41E9B830B00B42C1C;
 			remoteInfo = DWNetworkDemo;
 		};
+		CF05E30A1E9B840000B42C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF05E2BD1E9B830B00B42C1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF05E2FF1E9B83FF00B42C1C;
+			remoteInfo = DWNetwork;
+		};
+		CF05E30C1E9B840000B42C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF05E2BD1E9B830B00B42C1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF05E2C41E9B830B00B42C1C;
+			remoteInfo = DWNetworkDemo;
+		};
+		CF05E3131E9B840000B42C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF05E2BD1E9B830B00B42C1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF05E2FF1E9B83FF00B42C1C;
+			remoteInfo = DWNetwork;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF05E31A1E9B840000B42C1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF05E3161E9B840000B42C1C /* DWNetwork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF05E2C51E9B830B00B42C1C /* DWNetworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWNetworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +102,24 @@
 		CF05E2E91E9B830C00B42C1C /* DWNetworkDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWNetworkDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF05E2ED1E9B830C00B42C1C /* DWNetworkDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWNetworkDemoUITests.m; sourceTree = "<group>"; };
 		CF05E2EF1E9B830C00B42C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DWNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF05E3021E9B83FF00B42C1C /* DWNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWNetwork.h; sourceTree = "<group>"; };
+		CF05E3031E9B83FF00B42C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF05E3081E9B840000B42C1C /* DWNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF05E30F1E9B840000B42C1C /* DWNetworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWNetworkTests.m; sourceTree = "<group>"; };
+		CF05E3111E9B840000B42C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF05E31F1E9B841D00B42C1C /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		CF4E7EED1EA5C78200652782 /* DWRequestTaskProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWRequestTaskProtocol.h; sourceTree = "<group>"; };
+		CF4E7EF81EA70C8900652782 /* NSObject+DWRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DWRequestTask.h"; sourceTree = "<group>"; };
+		CF4E7EF91EA70C8900652782 /* NSObject+DWRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DWRequestTask.m"; sourceTree = "<group>"; };
+		CF4E7EFC1EA70DBE00652782 /* DWRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWRequestTask.h; sourceTree = "<group>"; };
+		CF4E7EFD1EA70DBE00652782 /* DWRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWRequestTask.m; sourceTree = "<group>"; };
+		CF4E7F001EA745E700652782 /* MyTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTask.h; sourceTree = "<group>"; };
+		CF4E7F011EA745E700652782 /* MyTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTask.m; sourceTree = "<group>"; };
+		CF4E7F071EA7471D00652782 /* DWHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWHTTPSessionManager.h; sourceTree = "<group>"; };
+		CF4E7F081EA7471D00652782 /* DWHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHTTPSessionManager.m; sourceTree = "<group>"; };
+		CF4E7F0B1EA858E400652782 /* DWHTTPRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWHTTPRequestSerializer.h; sourceTree = "<group>"; };
+		CF4E7F0C1EA858E400652782 /* DWHTTPRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHTTPRequestSerializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF05E3151E9B840000B42C1C /* DWNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +145,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF05E2FC1E9B83FF00B42C1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF05E3201E9B841D00B42C1C /* AFNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF05E3051E9B840000B42C1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF05E3091E9B840000B42C1C /* DWNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,7 +170,10 @@
 				CF05E2C71E9B830B00B42C1C /* DWNetworkDemo */,
 				CF05E2E11E9B830C00B42C1C /* DWNetworkDemoTests */,
 				CF05E2EC1E9B830C00B42C1C /* DWNetworkDemoUITests */,
+				CF05E3011E9B83FF00B42C1C /* DWNetwork */,
+				CF05E30E1E9B840000B42C1C /* DWNetworkTests */,
 				CF05E2C61E9B830B00B42C1C /* Products */,
+				CF05E31E1E9B841D00B42C1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +183,8 @@
 				CF05E2C51E9B830B00B42C1C /* DWNetworkDemo.app */,
 				CF05E2DE1E9B830C00B42C1C /* DWNetworkDemoTests.xctest */,
 				CF05E2E91E9B830C00B42C1C /* DWNetworkDemoUITests.xctest */,
+				CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */,
+				CF05E3081E9B840000B42C1C /* DWNetworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +196,8 @@
 				CF05E2CC1E9B830B00B42C1C /* AppDelegate.m */,
 				CF05E2CE1E9B830B00B42C1C /* ViewController.h */,
 				CF05E2CF1E9B830B00B42C1C /* ViewController.m */,
+				CF4E7F001EA745E700652782 /* MyTask.h */,
+				CF4E7F011EA745E700652782 /* MyTask.m */,
 				CF05E2D11E9B830B00B42C1C /* Main.storyboard */,
 				CF05E2D41E9B830B00B42C1C /* Assets.xcassets */,
 				CF05E2D61E9B830B00B42C1C /* LaunchScreen.storyboard */,
@@ -140,7 +233,58 @@
 			path = DWNetworkDemoUITests;
 			sourceTree = "<group>";
 		};
+		CF05E3011E9B83FF00B42C1C /* DWNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				CF05E3021E9B83FF00B42C1C /* DWNetwork.h */,
+				CF4E7EED1EA5C78200652782 /* DWRequestTaskProtocol.h */,
+				CF4E7F0B1EA858E400652782 /* DWHTTPRequestSerializer.h */,
+				CF4E7F0C1EA858E400652782 /* DWHTTPRequestSerializer.m */,
+				CF4E7F071EA7471D00652782 /* DWHTTPSessionManager.h */,
+				CF4E7F081EA7471D00652782 /* DWHTTPSessionManager.m */,
+				CF4E7EF81EA70C8900652782 /* NSObject+DWRequestTask.h */,
+				CF4E7EF91EA70C8900652782 /* NSObject+DWRequestTask.m */,
+				CF4E7EFC1EA70DBE00652782 /* DWRequestTask.h */,
+				CF4E7EFD1EA70DBE00652782 /* DWRequestTask.m */,
+				CF05E3031E9B83FF00B42C1C /* Info.plist */,
+			);
+			path = DWNetwork;
+			sourceTree = "<group>";
+		};
+		CF05E30E1E9B840000B42C1C /* DWNetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF05E30F1E9B840000B42C1C /* DWNetworkTests.m */,
+				CF05E3111E9B840000B42C1C /* Info.plist */,
+			);
+			path = DWNetworkTests;
+			sourceTree = "<group>";
+		};
+		CF05E31E1E9B841D00B42C1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF05E31F1E9B841D00B42C1C /* AFNetworking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CF05E2FD1E9B83FF00B42C1C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4E7EFE1EA70DBE00652782 /* DWRequestTask.h in Headers */,
+				CF4E7F091EA7471D00652782 /* DWHTTPSessionManager.h in Headers */,
+				CF4E7EFA1EA70C8900652782 /* NSObject+DWRequestTask.h in Headers */,
+				CF4E7F0D1EA858E400652782 /* DWHTTPRequestSerializer.h in Headers */,
+				CF05E3121E9B840000B42C1C /* DWNetwork.h in Headers */,
+				CF4E7EEE1EA5C78200652782 /* DWRequestTaskProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		CF05E2C41E9B830B00B42C1C /* DWNetworkDemo */ = {
@@ -150,10 +294,13 @@
 				CF05E2C11E9B830B00B42C1C /* Sources */,
 				CF05E2C21E9B830B00B42C1C /* Frameworks */,
 				CF05E2C31E9B830B00B42C1C /* Resources */,
+				CF05E31A1E9B840000B42C1C /* Embed Frameworks */,
+				CF05E3221E9B843E00B42C1C /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CF05E3141E9B840000B42C1C /* PBXTargetDependency */,
 			);
 			name = DWNetworkDemo;
 			productName = DWNetworkDemo;
@@ -196,6 +343,44 @@
 			productReference = CF05E2E91E9B830C00B42C1C /* DWNetworkDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CF05E2FF1E9B83FF00B42C1C /* DWNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF05E3171E9B840000B42C1C /* Build configuration list for PBXNativeTarget "DWNetwork" */;
+			buildPhases = (
+				CF05E2FB1E9B83FF00B42C1C /* Sources */,
+				CF05E2FC1E9B83FF00B42C1C /* Frameworks */,
+				CF05E2FD1E9B83FF00B42C1C /* Headers */,
+				CF05E2FE1E9B83FF00B42C1C /* Resources */,
+				CF05E3211E9B842300B42C1C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DWNetwork;
+			productName = DWNetwork;
+			productReference = CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF05E3071E9B840000B42C1C /* DWNetworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF05E31B1E9B840000B42C1C /* Build configuration list for PBXNativeTarget "DWNetworkTests" */;
+			buildPhases = (
+				CF05E3041E9B840000B42C1C /* Sources */,
+				CF05E3051E9B840000B42C1C /* Frameworks */,
+				CF05E3061E9B840000B42C1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF05E30B1E9B840000B42C1C /* PBXTargetDependency */,
+				CF05E30D1E9B840000B42C1C /* PBXTargetDependency */,
+			);
+			name = DWNetworkTests;
+			productName = DWNetworkTests;
+			productReference = CF05E3081E9B840000B42C1C /* DWNetworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +404,15 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = CF05E2C41E9B830B00B42C1C;
 					};
+					CF05E2FF1E9B83FF00B42C1C = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					CF05E3071E9B840000B42C1C = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CF05E2C41E9B830B00B42C1C;
+					};
 				};
 			};
 			buildConfigurationList = CF05E2C01E9B830B00B42C1C /* Build configuration list for PBXProject "DWNetworkDemo" */;
@@ -237,6 +431,8 @@
 				CF05E2C41E9B830B00B42C1C /* DWNetworkDemo */,
 				CF05E2DD1E9B830C00B42C1C /* DWNetworkDemoTests */,
 				CF05E2E81E9B830C00B42C1C /* DWNetworkDemoUITests */,
+				CF05E2FF1E9B83FF00B42C1C /* DWNetwork */,
+				CF05E3071E9B840000B42C1C /* DWNetworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,13 +462,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF05E2FE1E9B83FF00B42C1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF05E3061E9B840000B42C1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF05E3211E9B842300B42C1C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		CF05E3221E9B843E00B42C1C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF05E2C11E9B830B00B42C1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4E7F021EA745E700652782 /* MyTask.m in Sources */,
 				CF05E2D01E9B830B00B42C1C /* ViewController.m in Sources */,
 				CF05E2CD1E9B830B00B42C1C /* AppDelegate.m in Sources */,
 				CF05E2CA1E9B830B00B42C1C /* main.m in Sources */,
@@ -295,6 +536,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF05E2FB1E9B83FF00B42C1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4E7F0A1EA7471E00652782 /* DWHTTPSessionManager.m in Sources */,
+				CF4E7EFB1EA70C8900652782 /* NSObject+DWRequestTask.m in Sources */,
+				CF4E7F0E1EA858E400652782 /* DWHTTPRequestSerializer.m in Sources */,
+				CF4E7EFF1EA70DBE00652782 /* DWRequestTask.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF05E3041E9B840000B42C1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF05E3101E9B840000B42C1C /* DWNetworkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -307,6 +567,21 @@
 			isa = PBXTargetDependency;
 			target = CF05E2C41E9B830B00B42C1C /* DWNetworkDemo */;
 			targetProxy = CF05E2EA1E9B830C00B42C1C /* PBXContainerItemProxy */;
+		};
+		CF05E30B1E9B840000B42C1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF05E2FF1E9B83FF00B42C1C /* DWNetwork */;
+			targetProxy = CF05E30A1E9B840000B42C1C /* PBXContainerItemProxy */;
+		};
+		CF05E30D1E9B840000B42C1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF05E2C41E9B830B00B42C1C /* DWNetworkDemo */;
+			targetProxy = CF05E30C1E9B840000B42C1C /* PBXContainerItemProxy */;
+		};
+		CF05E3141E9B840000B42C1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF05E2FF1E9B83FF00B42C1C /* DWNetwork */;
+			targetProxy = CF05E3131E9B840000B42C1C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -422,6 +697,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DWNetworkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWNetworkDemo;
@@ -433,6 +712,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DWNetworkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWNetworkDemo;
@@ -486,6 +769,78 @@
 			};
 			name = Release;
 		};
+		CF05E3181E9B840000B42C1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = DWNetwork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF05E3191E9B840000B42C1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = DWNetwork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF05E31C1E9B840000B42C1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DWNetworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWNetworkDemo.app/DWNetworkDemo";
+			};
+			name = Debug;
+		};
+		CF05E31D1E9B840000B42C1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DWNetworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWNetworkDemo.app/DWNetworkDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -505,6 +860,7 @@
 				CF05E2F41E9B830C00B42C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF05E2F51E9B830C00B42C1C /* Build configuration list for PBXNativeTarget "DWNetworkDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +869,7 @@
 				CF05E2F71E9B830C00B42C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF05E2F81E9B830C00B42C1C /* Build configuration list for PBXNativeTarget "DWNetworkDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +878,25 @@
 				CF05E2FA1E9B830C00B42C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF05E3171E9B840000B42C1C /* Build configuration list for PBXNativeTarget "DWNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF05E3181E9B840000B42C1C /* Debug */,
+				CF05E3191E9B840000B42C1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF05E31B1E9B840000B42C1C /* Build configuration list for PBXNativeTarget "DWNetworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF05E31C1E9B840000B42C1C /* Debug */,
+				CF05E31D1E9B840000B42C1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
