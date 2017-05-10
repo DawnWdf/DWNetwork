@@ -16,4 +16,10 @@ FOUNDATION_EXPORT const unsigned char DWNetworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <DWNetwork/PublicHeader.h>
 
+#import <DWNetwork/DWRequestTaskProtocol.h>
+#import <DWNetwork/DWHTTPRequestSerializer.h>
+#import <DWNetwork/DWHTTPSessionManager.h>
+#import <DWNetwork/NSObject+DWRequestTask.h>
+#import <DWNetwork/DWRequestTask.h>
+
 

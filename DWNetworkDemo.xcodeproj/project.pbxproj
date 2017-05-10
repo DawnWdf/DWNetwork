@@ -21,15 +21,15 @@
 		CF05E3151E9B840000B42C1C /* DWNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */; };
 		CF05E3161E9B840000B42C1C /* DWNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF05E3001E9B83FF00B42C1C /* DWNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF05E3201E9B841D00B42C1C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF05E31F1E9B841D00B42C1C /* AFNetworking.framework */; };
-		CF4E7EEE1EA5C78200652782 /* DWRequestTaskProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EED1EA5C78200652782 /* DWRequestTaskProtocol.h */; };
-		CF4E7EFA1EA70C8900652782 /* NSObject+DWRequestTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EF81EA70C8900652782 /* NSObject+DWRequestTask.h */; };
+		CF4E7EEE1EA5C78200652782 /* DWRequestTaskProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EED1EA5C78200652782 /* DWRequestTaskProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF4E7EFA1EA70C8900652782 /* NSObject+DWRequestTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EF81EA70C8900652782 /* NSObject+DWRequestTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF4E7EFB1EA70C8900652782 /* NSObject+DWRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7EF91EA70C8900652782 /* NSObject+DWRequestTask.m */; };
-		CF4E7EFE1EA70DBE00652782 /* DWRequestTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EFC1EA70DBE00652782 /* DWRequestTask.h */; };
+		CF4E7EFE1EA70DBE00652782 /* DWRequestTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7EFC1EA70DBE00652782 /* DWRequestTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF4E7EFF1EA70DBE00652782 /* DWRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7EFD1EA70DBE00652782 /* DWRequestTask.m */; };
 		CF4E7F021EA745E700652782 /* MyTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7F011EA745E700652782 /* MyTask.m */; };
-		CF4E7F091EA7471D00652782 /* DWHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7F071EA7471D00652782 /* DWHTTPSessionManager.h */; };
+		CF4E7F091EA7471D00652782 /* DWHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7F071EA7471D00652782 /* DWHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF4E7F0A1EA7471E00652782 /* DWHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7F081EA7471D00652782 /* DWHTTPSessionManager.m */; };
-		CF4E7F0D1EA858E400652782 /* DWHTTPRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7F0B1EA858E400652782 /* DWHTTPRequestSerializer.h */; };
+		CF4E7F0D1EA858E400652782 /* DWHTTPRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4E7F0B1EA858E400652782 /* DWHTTPRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF4E7F0E1EA858E400652782 /* DWHTTPRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E7F0C1EA858E400652782 /* DWHTTPRequestSerializer.m */; };
 /* End PBXBuildFile section */
 
