@@ -13,8 +13,6 @@
 - (instancetype)initWithAttributes:(id)attributes{
     self = [super initWithAttributes:attributes];
     if (self) {
-        self.path = @"http://apicloud.mob.com/user/rigister";
-        self.method = DWNetworkMethod_GET;
     }
     return self;
 }
