@@ -20,7 +20,7 @@
 @interface NSObject()
 
 @property (nonatomic, strong) id attributes;
-@property(nonatomic,strong)NSURLSessionDataTask *sessionDataTask;
+@property(nonatomic,strong) NSURLSessionDataTask *sessionDataTask;
 
 @end
 
@@ -40,19 +40,44 @@
     [self cancel];
     //打印当前请求属性
     NSLog(@"%@ %ld  %@",self.path,self.method,self.attributes);
+    
     DWHTTPSessionManager *manager = [DWHTTPSessionManager shareInstance];
     
     void(^sessionSuccess)(NSURLSessionDataTask * _Nonnull task,id _Nullable response) = ^(NSURLSessionDataTask * _Nonnull task,id _Nullable response){
-        
+        if (success) {
+            NSInteger statusCode = [(NSHTTPURLResponse *)task.response statusCode];
+            success(statusCode, [self checkResponseValid:response]);
+        }
     };
     
     void(^sessionFailed)(NSURLSessionDataTask * _Nonnull task , NSError * _Nullable error) = ^(NSURLSessionDataTask * _Nonnull task , NSError * _Nullable error){
-        
+        if (failed) {
+            NSInteger statusCode = [(NSHTTPURLResponse *)task.response statusCode];
+            failed(statusCode, error);
+        }
     };
     
-    self.sessionDataTask = [manager GET:self.path parameters:self.attributes progress:^(NSProgress * _Nonnull downloadProgress) {
+    if (self.method == DWNetworkMethod_GET) {
+        self.sessionDataTask = [manager GET:self.path parameters:self.attributes progress:nil success:sessionSuccess failure:sessionFailed];
+    }else if (self.method == DWNetworkMethod_POST) {
         
-    } success:sessionSuccess failure:sessionFailed];
+        if (self.attributes && [self.attributes isKindOfClass:[NSData class]]) {
+//            [self.sessionDataTask.reques setQueryStringSerializationWithBlock:^NSString * _Nonnull(NSURLRequest * _Nonnull request, id  _Nonnull parameters, NSError * _Nullable __autoreleasing * _Nullable error) {
+//                
+//                NSString * string = [[NSString alloc] initWithData:parameters  encoding:NSISOLatin1StringEncoding];
+//                return string;
+//            }];
+        }
+        
+        self.sessionDataTask = [manager POST:self.path parameters:self.attributes progress:nil success:sessionSuccess failure:sessionFailed];
+    }else if (self.method == DWNetworkMethod_PUT){
+        self.sessionDataTask = [manager PUT:self.path parameters:self.attributes success:sessionSuccess failure:sessionFailed];
+    }else if (self.method == DWNetworkMethod_DELETE) {
+        self.sessionDataTask = [manager DELETE:self.path parameters:self.attributes success:sessionSuccess failure:sessionFailed];
+    }else if (self.method == DWNetworkMethod_PETCH) {
+        self.sessionDataTask = [manager PATCH:self.path parameters:self.attributes success:sessionSuccess failure:sessionFailed];
+    }
+    
     
     
     [self.sessionDataTask resume];
@@ -63,6 +88,24 @@
     self.sessionDataTask = nil;
 }
 
+#pragma mark - logic
+- (NSDictionary *)checkResponseValid:(id)responseObject{
+    if ([responseObject isKindOfClass:[NSDictionary class]]) {
+        
+        return responseObject;
+    }else if([responseObject isKindOfClass:[NSData class]]){
+        id result = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        if ([result isKindOfClass:[NSDictionary class]]) {
+            return responseObject;
+        }else{
+            return nil;
+        }
+    }else{
+        return nil;
+    }
+    
+    return nil;
+}
 #pragma mark - getter & setter
 
 - (void)setSessionDataTask:(NSURLSessionDataTask *)sessionDataTask {
