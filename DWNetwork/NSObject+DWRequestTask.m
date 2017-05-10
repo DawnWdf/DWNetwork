@@ -96,7 +96,7 @@
     }else if([responseObject isKindOfClass:[NSData class]]){
         id result = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         if ([result isKindOfClass:[NSDictionary class]]) {
-            return responseObject;
+            return result;
         }else{
             return nil;
         }

@@ -14,12 +14,14 @@
 
 #import "DWRequestTask.h"
 
+#import "MyTask.h"
+
 @interface ViewController ()
 
 
 @property (nonatomic, strong) NSObject *task;
 
-@property (nonatomic, strong) DWRequestTask *myTask;
+@property (nonatomic, strong) MyTask *myTask;
 @end
 
 @implementation ViewController
@@ -28,11 +30,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 //    self.task = [[NSObject alloc]initWithAttributes:@""];
-    self.myTask  = [[DWRequestTask alloc] initWithAttributes:@{@"key":@"1c3d999f473ee",@"username":@"dwdemo",@"password":@"qwer1234",@"email":@"icy19882006@163.com"}];
-    [self.myTask excute:^(NSInteger statusCode, id responseObject) {
+//    self.myTask  = [[DWRequestTask alloc] initWithAttributes:@{@"key":@"1c3d999f473ee",@"username":@"dwdemo",@"password":@"qwer1234",@"email":@"icy19882006@163.com"}];
+//    [self.myTask excute:^(NSInteger statusCode, id responseObject) {
+//        NSLog(@"%@",responseObject);
+//    } failed:^(NSInteger statusCode, NSError *error) {
+//        NSLog(@"%ld",statusCode);
+//    }];
+    
+    MyTask *task = [[MyTask alloc]initWithAttributes:@{@"key":@"1c3d999f473ee",@"username":@"dwdemo",@"password":@"qwer1234"}];
+    [task excute:^(NSInteger statusCode, id responseObject) {
         NSLog(@"%@",responseObject);
     } failed:^(NSInteger statusCode, NSError *error) {
-        NSLog(@"%ld",statusCode);
+
+        
     }];
 }
 

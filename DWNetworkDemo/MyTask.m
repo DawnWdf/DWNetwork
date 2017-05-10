@@ -9,5 +9,14 @@
 #import "MyTask.h"
 
 @implementation MyTask
+- (instancetype)initWithAttributes:(id)attributes{
+    self = [super initWithAttributes:attributes];
+    if (self) {
+        self.path = @"http://apicloud.mob.com/user/login";
+        self.method = DWNetworkMethod_GET;
+        
+    }
+    return self;
+}
 
 @end
