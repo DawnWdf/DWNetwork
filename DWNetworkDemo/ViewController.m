@@ -10,13 +10,14 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-#import "NSObject+DWRequestTask.h"
-
-#import "DWRequestTask.h"
-
 #import "MyTask.h"
 
+#import "DWNetwork.h"
+
 @interface ViewController ()
+{
+    NSString *lastModify;
+}
 
 
 @property (nonatomic, strong) NSObject *task;
@@ -37,19 +38,35 @@
 //        NSLog(@"%ld",statusCode);
 //    }];
     
-    MyTask *task = [[MyTask alloc]initWithAttributes:@{@"key":@"1c3d999f473ee",@"username":@"dwdemo",@"password":@"qwer1234"}];
-    [task excute:^(NSInteger statusCode, id responseObject) {
-        NSLog(@"%@",responseObject);
-    } failed:^(NSInteger statusCode, NSError *error) {
-
-        
-    }];
+//    MyTask *task = [[MyTask alloc]initWithAttributes:@{@"key":@"1c3d999f473ee",@"username":@"dwdemo",@"password":@"qwer1234"}];
+    
+    
+    UIButton *requestButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    requestButton.frame = CGRectMake(20, 100, 200, 100);
+    [requestButton addTarget:self action:@selector(request) forControlEvents:UIControlEventTouchUpInside];
+    [requestButton setTitle:@"request" forState:UIControlStateNormal];
+    [requestButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.view addSubview:requestButton];
+    
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)request{
+    MyTask *task = [[MyTask alloc]initWithAttributes:nil headers:@{}];
+    
+    [task excute:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSInteger statusCode, id responseObject, id header) {
+        NSLog(@"%ld",statusCode);
+//        NSLog(@"%@",responseObject);
+    } failed:^(NSInteger statusCode, NSError *error,id header) {
+        NSLog(@"%ld",statusCode);
+    }];
 }
 
 - (void)downloadTask{

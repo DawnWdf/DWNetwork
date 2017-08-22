@@ -12,4 +12,6 @@
 
 + (instancetype)shareInstance;
 
+- (void)configHeaders:(NSDictionary *)headers;
+
 @end

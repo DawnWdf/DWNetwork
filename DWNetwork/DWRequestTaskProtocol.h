@@ -11,8 +11,11 @@
 @protocol DWRequestTaskProtocol <NSObject>
 
 @required
-- (instancetype)initWithAttributes:(id)attributes;
-- (void)excute:(void(^)(NSInteger statusCode, id responseObject))success failed:(void(^)(NSInteger statusCode, NSError *error))failed;
+- (instancetype _Nonnull )initWithAttributes:(id _Nullable )attributes;
+- (instancetype _Nonnull)initWithAttributes:(id _Nullable)attributes headers:(NSDictionary *_Nullable)headers;
+
+- (void)excute:(void(^_Nullable)(NSInteger statusCode, id _Nullable responseObject))success failed:(void(^_Nullable)(NSInteger statusCode, NSError * _Nullable error))failed;
+- (void)excute:(void(^_Nullable)(NSProgress * _Nonnull downloadProgress))progress success:(void(^_Nullable)(NSInteger statusCode, id _Nullable responseObject,id _Nullable headers))success failed:(void(^_Nullable)(NSInteger statusCode, NSError * _Nullable error,id _Nullable headers))failed;
 
 @optional
 - (void)printURL;

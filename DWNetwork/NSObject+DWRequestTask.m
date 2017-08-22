@@ -14,12 +14,13 @@
 #define k_method @"NSObject+DWRequestTask_method_key"
 #define k_attributes @"DWRequestTask_attributes_key"
 #define k_sessionDataTask @"DWRequestTask_sessionDataTask_key"
+#define k_headers @"DWRequestTask_header_key"
 
-#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 
 @interface NSObject()
 
 @property (nonatomic, strong) id attributes;
+@property (nonatomic, strong) NSDictionary *headers;
 @property(nonatomic,strong) NSURLSessionDataTask *sessionDataTask;
 
 @end
@@ -29,12 +30,67 @@
 
 @dynamic path,method;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 - (instancetype)initWithAttributes:(id)attributes{
     self = [[NSObject alloc] init];
     if (self) {
         self.attributes = attributes;
     }
     return self;
+}
+#pragma clang diagnostic pop
+
+
+- (instancetype)initWithAttributes:(id)attributes headers:(NSDictionary *)headers {
+    self = [self initWithAttributes:attributes];
+    if (self) {
+        self.headers = headers;
+    }
+    return self;
+}
+
+- (void)excute:(void(^)(NSProgress * _Nonnull downloadProgress))progress success:(void(^)(NSInteger statusCode, id responseObject,id headers))success failed:(void(^)(NSInteger statusCode, NSError *error,id headers))failed{
+    [self cancel];
+    //打印当前请求属性
+    NSLog(@"%@ %ld  %@",self.path,self.method,self.attributes);
+    
+    DWHTTPSessionManager *manager = [DWHTTPSessionManager shareInstance];
+    if (self.headers) {
+        [manager configHeaders:self.headers];
+    }
+    
+    void(^sessionSuccess)(NSURLSessionDataTask * _Nonnull task,id _Nullable response) = ^(NSURLSessionDataTask * _Nonnull task,id _Nullable response){
+        if (success) {
+            NSInteger statusCode = [(NSHTTPURLResponse *)task.response statusCode];
+            success(statusCode, [self checkResponseValid:response],[(NSHTTPURLResponse *)task.response allHeaderFields]);
+        }
+    };
+    
+    void(^sessionFailed)(NSURLSessionDataTask * _Nonnull task , NSError * _Nullable error) = ^(NSURLSessionDataTask * _Nonnull task , NSError * _Nullable error){
+        if (failed) {
+            NSInteger statusCode = [(NSHTTPURLResponse *)task.response statusCode];
+            failed(statusCode, error,[(NSHTTPURLResponse *)task.response allHeaderFields]);
+        }
+    };
+    
+    if (self.method == DWNetworkMethod_GET) {
+        self.sessionDataTask = [manager GET:self.path parameters:self.attributes progress:^(NSProgress * _Nonnull downloadProgress) {
+        } success:sessionSuccess failure:sessionFailed];
+    }else if (self.method == DWNetworkMethod_POST) {
+        
+        if (self.attributes && [self.attributes isKindOfClass:[NSData class]]) {
+
+        }
+        
+        self.sessionDataTask = [manager POST:self.path parameters:self.attributes progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:sessionSuccess failure:sessionFailed];
+    }
+    
+    
+    
+    [self.sessionDataTask resume];
 }
 - (void)excute:(void(^)(NSInteger statusCode, id responseObject))success failed:(void(^)(NSInteger statusCode, NSError *error))failed{
     [self cancel];
@@ -61,14 +117,6 @@
         self.sessionDataTask = [manager GET:self.path parameters:self.attributes progress:nil success:sessionSuccess failure:sessionFailed];
     }else if (self.method == DWNetworkMethod_POST) {
         
-        if (self.attributes && [self.attributes isKindOfClass:[NSData class]]) {
-//            [self.sessionDataTask.reques setQueryStringSerializationWithBlock:^NSString * _Nonnull(NSURLRequest * _Nonnull request, id  _Nonnull parameters, NSError * _Nullable __autoreleasing * _Nullable error) {
-//                
-//                NSString * string = [[NSString alloc] initWithData:parameters  encoding:NSISOLatin1StringEncoding];
-//                return string;
-//            }];
-        }
-        
         self.sessionDataTask = [manager POST:self.path parameters:self.attributes progress:nil success:sessionSuccess failure:sessionFailed];
     }else if (self.method == DWNetworkMethod_PUT){
         self.sessionDataTask = [manager PUT:self.path parameters:self.attributes success:sessionSuccess failure:sessionFailed];
@@ -88,6 +136,7 @@
     self.sessionDataTask = nil;
 }
 
+
 #pragma mark - logic
 - (NSDictionary *)checkResponseValid:(id)responseObject{
     if ([responseObject isKindOfClass:[NSDictionary class]]) {
@@ -98,10 +147,10 @@
         if ([result isKindOfClass:[NSDictionary class]]) {
             return result;
         }else{
-            return nil;
+            return responseObject;
         }
     }else{
-        return nil;
+        return responseObject;
     }
     
     return nil;
@@ -123,6 +172,14 @@
 
 - (id)attributes{
     return objc_getAssociatedObject(self, k_attributes);
+}
+
+- (void)setHeaders:(NSDictionary *)headers {
+    objc_setAssociatedObject(self, k_headers, headers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSDictionary *)headers {
+    return objc_getAssociatedObject(self, k_headers);
 }
 
 - (void)setPath:(NSString *)path{

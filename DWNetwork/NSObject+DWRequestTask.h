@@ -24,4 +24,5 @@ typedef NS_ENUM(NSInteger , DWNetworkMethod){
 
 @property (nonatomic, assign) NSInteger method;
 
+
 @end

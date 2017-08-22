@@ -22,12 +22,12 @@ static DWHTTPSessionManager *sessionManager = nil;
         
         //设置请求序列 可自定义头信息
         manager.requestSerializer = [DWHTTPRequestSerializer shareInstance];
-        
         //设置响应序列 可单独成独立类型
         AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
-        responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json", @"text/javascript",@"text/plain", nil];
+        NSMutableSet *contents = [NSMutableSet setWithObjects:@"application/json", @"text/html",@"text/json", @"text/javascript",@"text/plain",@"image/png", nil];
+        responseSerializer.acceptableContentTypes = contents;
         manager.responseSerializer = responseSerializer;
-        
+
         //设置安全策略 - 暂无
         [manager setSecurityPolicy:[AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone]];
         
@@ -36,6 +36,31 @@ static DWHTTPSessionManager *sessionManager = nil;
     });
     return sessionManager;
 }
+
+- (void)configHeaders:(NSDictionary *)headers {
+    if (headers) {
+        DWHTTPSessionManager *manager = [DWHTTPSessionManager shareInstance];
+        /*
+        id contentType = headers[@"Content-Type"];
+        AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
+        NSMutableSet *contents = [NSMutableSet setWithObjects:@"application/json", @"text/html",@"text/json", @"text/javascript",@"text/plain", nil];
+        if (contentType && [contentType isKindOfClass:[NSArray class]]) {
+            [contents addObjectsFromArray:contentType];
+        }else if (contentType && [contentType isKindOfClass:[NSString class]]){
+            [contents addObject:contentType];
+        }else{
+        }
+        responseSerializer.acceptableContentTypes = contents;
+        manager.responseSerializer = responseSerializer;
+         */
+        
+        [headers enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            [manager.requestSerializer setValue:obj forHTTPHeaderField:key];
+        }];
+    }
+    
+}
+
 
 #pragma mark - mark
 

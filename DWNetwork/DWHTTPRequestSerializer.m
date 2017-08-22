@@ -25,7 +25,6 @@ static DWHTTPRequestSerializer *serializer = nil;
         serializer = [DWHTTPRequestSerializer serializer];
         [serializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         [serializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        //and so on
         
         serializer.stringEncoding = NSUTF8StringEncoding;
         

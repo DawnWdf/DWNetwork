@@ -23,3 +23,15 @@ FOUNDATION_EXPORT const unsigned char DWNetworkVersionString[];
 #import <DWNetwork/DWRequestTask.h>
 
 
+#define RequestHeaderContentType @"Content-Type"
+#define RequestHeaderETag @"If-None-Match"
+#define RequestHeaderLastModify @"If-Modified-Since"
+
+
+
+
+
+
+
+
+

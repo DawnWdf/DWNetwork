@@ -17,4 +17,11 @@
     return self;
 }
 
+- (instancetype)initWithAttributes:(id)attributes headers:(NSDictionary *)headers {
+    self = [super initWithAttributes:attributes headers:headers];
+    if (self) {
+        
+    }
+    return self;
+}
 @end
