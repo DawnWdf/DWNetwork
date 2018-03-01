@@ -40,6 +40,34 @@
     
 //    MyTask *task = [[MyTask alloc]initWithAttributes:@{@"key":@"1c3d999f473ee",@"username":@"dwdemo",@"password":@"qwer1234"}];
     
+    CALayer *colorLayer = [CALayer layer];
+    colorLayer.frame = CGRectMake(50.f, 100.f, 50.f, 50.f);
+    colorLayer.backgroundColor = [UIColor blueColor].CGColor;
+    //add a custom action
+    CATransition *transiton = [CATransition animation];
+    transiton.type = kCATransitionPush;
+    transiton.subtype = kCATransitionFromLeft;
+    colorLayer.actions = @{@"backgroundColor":transiton};
+    //add it to our view
+    [self.view.layer addSublayer:colorLayer];
+    
+    __block int a  = 0;
+    __weak NSString *string = @"string";
+    __block NSArray *array = [[NSArray alloc] initWithObjects:@"obj 1",@"obj 2", nil];//[NSArray arrayWithArray:@[@"array object 1",@"array object 2"]];
+
+    __weak typeof(self) weakSelf = self;
+    void (^aBlock)() = ^(){
+        NSLog(@"%d",a);
+        NSLog(@"%@",string);
+        __strong NSArray *strongArray = array;
+        NSLog(@"%@",strongArray);
+        NSLog(@"%@",self);
+    };
+   
+    a= 10;
+    string = @"修改后的string";
+    array = @[@"修改后的array"];
+    aBlock();
     
     UIButton *requestButton = [UIButton buttonWithType:UIButtonTypeCustom];
     requestButton.frame = CGRectMake(20, 100, 200, 100);
@@ -47,6 +75,8 @@
     [requestButton setTitle:@"request" forState:UIControlStateNormal];
     [requestButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.view addSubview:requestButton];
+//
+//    self.view.layer.presentationLayer
     
 }
 
